@@ -1,0 +1,27 @@
+# Before using, remember to replace:
+# 1. <random-admin-token> – with the admin api key
+# 2. <random-client-token> – with the client api key
+
+version: '3.2'
+services:
+  zero:
+    image: 'dgraph/dgraph:latest'
+    volumes:
+      - 'dgraph-data:/dgraph' # shared volume between zero and alpha
+    restart: on-failure
+    command: 'dgraph zero --my=zero:5080'
+  alpha:
+    image: 'dgraph/dgraph:latest'
+    volumes:
+      - 'dgraph-data:/dgraph' # shared volume between zero and alpha
+    restart: on-failure
+    command: 'dgraph alpha --my=alpha:7080 --zero=zero:5080 --security "token=<random-admin-token>;whitelist=0.0.0.0/0"'
+  proxy: 
+    build: .
+    image: ghcr.io/ezyostudio/dgraph-dg-auth-proxy:latest
+    restart: on-failure
+    environment:
+      - PORT=80
+      - HOST=0.0.0.0
+      - DGRAPH_URL=http://alpha:8080
+      - DGRAPH_AUTH_TOKEN=<random-client-token>
