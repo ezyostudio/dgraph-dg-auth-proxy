@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.5
+
+[compare changes](https://github.com/ezyostudio/dgraph-dg-auth-proxy/compare/v0.0.4...v0.0.5)
+
+### 🩹 Fixes
+
+- Add DG-Auth header to cors response ([9649b63](https://github.com/ezyostudio/dgraph-dg-auth-proxy/commit/9649b63))
+
+### ❤️ Contributors
+
+- Zao Soula ([@zaosoula](https://github.com/zaosoula))
+
 ## v0.0.4
 
 [compare changes](https://github.com/ezyostudio/dgraph-dg-auth-proxy/compare/v0.0.3...v0.0.4)
