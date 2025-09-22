@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import { createApp, defineEventHandler, getRequestHeader, proxyRequest, createError } from "h3";
+import { createApp, defineEventHandler, getRequestHeader, proxyRequest, createError, getResponseHeader, setResponseHeader } from "h3";
 
 const config = {
   dgraphUrl: process.env.DGRAPH_URL,
@@ -15,8 +15,8 @@ try {
 } catch (e: any) {
   if (e.message === 'Invalid URL') {
     throw new Error(`Invalid env variable "DGRAPH_URL": use format protocol://hostname `)
-  } 
-  
+  }
+
   throw e
 }
 
@@ -41,7 +41,17 @@ app.use(
   }),
 );
 
-app.use(defineEventHandler((event) => {
-  const targetUrl = new URL(event.path, config.dgraphUrl)
-  return proxyRequest(event, targetUrl.toString())
+
+app.use(defineEventHandler({
+  handler: (event) => {
+    const targetUrl = new URL(event.path, config.dgraphUrl)
+    return proxyRequest(event, targetUrl.toString(), {
+      onResponse(event) {
+        if (event.path.startsWith('/graphql') && event.method === 'OPTIONS') {
+          setResponseHeader(event, 'access-control-allow-headers', `${getResponseHeader(event, 'access-control-allow-headers')}, DG-Auth`)
+        }
+      },
+    })
+  }
 }))
+
