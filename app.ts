@@ -28,7 +28,7 @@ export const app = createApp();
 
 app.use(
   defineEventHandler((event) => {
-    if (event.path.startsWith('/graphql')) {
+    if (event.path.startsWith('/graphql') && event.method === 'POST') {
       const dgAuth = getRequestHeader(event, "dg-auth");
 
       if (dgAuth !== config.dgraphAuthToken) {
