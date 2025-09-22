@@ -1,5 +1,5 @@
 {
-  "version": "0.0.3",
+  "version": "0.0.4",
   "name": "dgraph-dg-auth-proxy",
   "packageManager": "yarn@4.6.0",
   "repository": "github:ezyostudio/dgraph-dg-auth-proxy",

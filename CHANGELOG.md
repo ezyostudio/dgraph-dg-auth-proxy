@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.4
+
+[compare changes](https://github.com/ezyostudio/dgraph-dg-auth-proxy/compare/v0.0.3...v0.0.4)
+
+### 🩹 Fixes
+
+- Only apply auth rules on POST method ([70fdadc](https://github.com/ezyostudio/dgraph-dg-auth-proxy/commit/70fdadc))
+
+### ❤️ Contributors
+
+- Zao Soula ([@zaosoula](https://github.com/zaosoula))
+
 ## v0.0.3
 
 [compare changes](https://github.com/ezyostudio/dgraph-dg-auth-proxy/compare/v0.0.2...v0.0.3)
