@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.6
+
+[compare changes](https://github.com/ezyostudio/dgraph-dg-auth-proxy/compare/v0.0.5...v0.0.6)
+
+### 🚀 Enhancements
+
+- Secure all endpoint that do not start with /admin ([8ba6a83](https://github.com/ezyostudio/dgraph-dg-auth-proxy/commit/8ba6a83))
+
+### 🏡 Chore
+
+- **script:** Prevent duplicated github release ([880ebf2](https://github.com/ezyostudio/dgraph-dg-auth-proxy/commit/880ebf2))
+
+### ❤️ Contributors
+
+- Zao Soula ([@zaosoula](https://github.com/zaosoula))
+
 ## v0.0.5
 
 [compare changes](https://github.com/ezyostudio/dgraph-dg-auth-proxy/compare/v0.0.4...v0.0.5)
