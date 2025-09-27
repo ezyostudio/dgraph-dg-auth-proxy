@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npx --yes listhen -w ./app.ts",
     "start": "npx --yes listhen ./app.ts",
-    "release": "npx changelogen@latest --release --clean --push && npx changelogen@latest gh release"
+    "release": "npx changelogen@latest --release --clean --push"
   },
   "dependencies": {
     "dotenv": "^17.2.2",
