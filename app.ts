@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import { createApp, defineEventHandler, getRequestHeader, proxyRequest, createError, getResponseHeader, setResponseHeader } from "h3";
+import { createApp, defineEventHandler, getRequestHeader, proxyRequest, createError, getResponseHeader, setResponseHeader, H3Event } from "h3";
 
 const config = {
   dgraphUrl: process.env.DGRAPH_URL,
@@ -28,7 +28,7 @@ export const app = createApp();
 
 app.use(
   defineEventHandler((event) => {
-    if (event.path.startsWith('/graphql') && event.method === 'POST') {
+    if (!event.path.startsWith('/admin') && event.method === 'POST') {
       const dgAuth = getRequestHeader(event, "dg-auth");
 
       if (dgAuth !== config.dgraphAuthToken) {
@@ -47,7 +47,7 @@ app.use(defineEventHandler({
     const targetUrl = new URL(event.path, config.dgraphUrl)
     return proxyRequest(event, targetUrl.toString(), {
       onResponse(event) {
-        if (event.path.startsWith('/graphql') && event.method === 'OPTIONS') {
+        if (!event.path.startsWith('/admin') && event.method === 'OPTIONS') {
           setResponseHeader(event, 'access-control-allow-headers', `${getResponseHeader(event, 'access-control-allow-headers')}, DG-Auth`)
         }
       },
