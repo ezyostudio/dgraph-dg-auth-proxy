@@ -28,7 +28,7 @@ export const app = createApp();
 
 app.use(
   defineEventHandler((event) => {
-    if (!event.path.startsWith('/admin') && event.method === 'POST') {
+    if (!event.path.startsWith('/admin')) {
       const dgAuth = getRequestHeader(event, "dg-auth");
 
       if (dgAuth !== config.dgraphAuthToken) {
