@@ -1,5 +1,5 @@
 # Build Stage 1
-FROM node:24-alpine
+FROM node:24-slim
 
 WORKDIR /app
 
