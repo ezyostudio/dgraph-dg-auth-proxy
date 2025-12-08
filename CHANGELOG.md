@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.7
+
+[compare changes](https://github.com/ezyostudio/dgraph-dg-auth-proxy/compare/v0.0.6...v0.0.7)
+
+### 🩹 Fixes
+
+- Enforce auth on GET /graphql ([7ccd5f4](https://github.com/ezyostudio/dgraph-dg-auth-proxy/commit/7ccd5f4))
+
+### 🏡 Chore
+
+- Optimise dockerfile ([deda00a](https://github.com/ezyostudio/dgraph-dg-auth-proxy/commit/deda00a))
+
+### ❤️ Contributors
+
+- Zao Soula ([@zaosoula](https://github.com/zaosoula))
+
 ## v0.0.6
 
 [compare changes](https://github.com/ezyostudio/dgraph-dg-auth-proxy/compare/v0.0.5...v0.0.6)
