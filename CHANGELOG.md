@@ -1,6 +1,20 @@
 # Changelog
 
 
+## v0.0.8
+
+[compare changes](https://github.com/ezyostudio/dgraph-dg-auth-proxy/compare/v0.0.7...v0.0.8)
+
+### 🏡 Chore
+
+- **docker:** Move from alpine based image to slim ([f76d8d1](https://github.com/ezyostudio/dgraph-dg-auth-proxy/commit/f76d8d1))
+- **docker:** Move from alpine based image to slim" ([99b90a1](https://github.com/ezyostudio/dgraph-dg-auth-proxy/commit/99b90a1))
+- Optimise dockerfile ([24b5131](https://github.com/ezyostudio/dgraph-dg-auth-proxy/commit/24b5131))
+
+### ❤️ Contributors
+
+- Zao Soula ([@zaosoula](https://github.com/zaosoula))
+
 ## v0.0.7
 
 [compare changes](https://github.com/ezyostudio/dgraph-dg-auth-proxy/compare/v0.0.6...v0.0.7)
