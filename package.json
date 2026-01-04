@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "npx --yes listhen -w ./app.ts",
     "start": "npx --yes listhen ./app.ts",
-    "release": "npx changelogen@latest --release --clean --push"
+    "release": "npx changelogen@latest --release --clean --push",
+    "docker:build": "docker build . -t dgraph-dg-auth-proxy",
+    "docker:run": "docker run -p 3000:3000 dgraph-dg-auth-proxy"
   },
   "dependencies": {
     "dotenv": "^17.2.2",
