@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.10
+
+[compare changes](https://github.com/ezyostudio/dgraph-dg-auth-proxy/compare/v0.0.9...v0.0.10)
+
+### 🩹 Fixes
+
+- Prevent undefined in access-control-allow-headers header ([d91cf53](https://github.com/ezyostudio/dgraph-dg-auth-proxy/commit/d91cf53))
+
+### ❤️ Contributors
+
+- Zao Soula ([@zaosoula](https://github.com/zaosoula))
+
 ## v0.0.9
 
 [compare changes](https://github.com/ezyostudio/dgraph-dg-auth-proxy/compare/v0.0.8...v0.0.9)
