@@ -11,7 +11,7 @@
     "docker:run": "docker run -p 3000:3000 dgraph-dg-auth-proxy"
   },
   "dependencies": {
-    "dotenv": "^17.2.2",
+    "dotenv": "^17.2.3",
     "h3": "^1.15.4"
   },
   "devDependencies": {
