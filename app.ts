@@ -7,7 +7,6 @@ import {
   createError,
   getResponseHeader,
   setResponseHeader,
-  H3Event,
 } from "h3";
 
 const config = {
@@ -62,7 +61,12 @@ app.use(
             setResponseHeader(
               event,
               "access-control-allow-headers",
-              `${getResponseHeader(event, "access-control-allow-headers")}, DG-Auth`,
+              [
+                getResponseHeader(event, "access-control-allow-headers"),
+                "DG-Auth",
+              ]
+                .filter(Boolean)
+                .join(", "),
             );
           }
         },
